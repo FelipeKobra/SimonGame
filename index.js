@@ -51,6 +51,12 @@ $(document).keydown(function () {
     $("#level-title").text("Level " + level);
     teclaAtivar();
   }
+
+  if (level === 0){
+    level++
+  }
+
+
 });
 
 $(document).click(function () {
@@ -58,13 +64,16 @@ $(document).click(function () {
     $("#level-title").text("Level " + level);
     teclaAtivar();
   }
+  if (level === 0){
+    level++
+  }
 });
 
 $(".btn").click(function () {
   var buttonId = "#" + $(this).attr("id");
 
   if (buttonId !== teclasPress[i]) {
-    $("#level-title").text("Perdeu Parça");
+    $("#level-title").text("Perdeu Parça, Aperte uma tecla");
     level = 0;
     teclasPress = [];
   }
@@ -80,5 +89,4 @@ $(".btn").click(function () {
     i++;
   }
 });
-
 
